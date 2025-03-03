@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>{{ product[1] }}</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename=product[4]) }}" class="img-fluid" alt="{{ product[1] }}">
+        </div>
+        <div class="col-md-6">
+            <p><strong>Fiyat:</strong> {{ product[2] }} TL/kg</p>
+            <p><strong>Stok:</strong> {{ product[3] }} kg</p>
+            <p><strong>Kategori:</strong> {{ product[6] }}</p>
+            <p><strong>Açıklama:</strong> {{ product[7] }}</p>
+            <form method="POST" action="{{ url_for('buyer') }}">
+                <input type="hidden" name="product_id" value="{{ product[0] }}">
+                <div class="input-group mb-2">
+                    <input type="number" name="kg" class="form-control" min="0.1" step="0.1" max="{{ product[3] }}" value="1" required>
+                    <span class="input-group-text">kg</span>
+                    <button type="submit" name="add_to_cart" class="btn btn-primary">Sepete Ekle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <h3 class="mt-4">Yorumlar</h3>
+    {% for review in reviews %}
+        <div class="card mb-2 p-3">
+            <p><strong>{{ review[3] }}</strong> - {{ review[0] }}/5</p>
+            <p>{{ review[1] }}</p>
+            <small>{{ review[2] }}</small>
+        </div>
+    {% endfor %}
+    <h4>Yorum Ekle</h4>
+    <form method="POST" action="{{ url_for('buyer') }}">
+        <input type="hidden" name="product_id" value="{{ product[0] }}">
+        <div class="mb-3">
+            <label for="rating" class="form-label">Puan (1-5)</label>
+            <input type="number" name="rating" class="form-control" min="1" max="5" required>
+        </div>
+        <div class="mb-3">
+            <label for="comment" class="form-label">Yorum</label>
+            <textarea name="comment" class="form-control" required></textarea>
+        </div>
+        <button type="submit" name="add_review" class="btn btn-success">Yorum Yap</button>
+    </form>
+{% endblock %}

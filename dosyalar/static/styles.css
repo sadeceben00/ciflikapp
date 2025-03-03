@@ -1,0 +1,33 @@
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://cdn.pixabay.com/photo/2017/08/07/22/57/farmers-market-2609530_1280.jpg');
+    background-size: cover;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}

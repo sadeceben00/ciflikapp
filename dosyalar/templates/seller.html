@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Satıcı Paneli</h2>
+    <p>Bakiyeniz: {{ balance }} TL</p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h4>Ürün Ekle</h4>
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="text" name="name" class="form-control mb-2" placeholder="Ürün adı" required>
+                    <input type="number" name="price" class="form-control mb-2" placeholder="Fiyat (TL/kg)" step="0.01" required>
+                    <input type="number" name="stock" class="form-control mb-2" placeholder="Stok (kg)" step="0.1" required>
+                    <select name="category" class="form-select mb-2" required>
+                        <option value="Sebze">Sebze</option>
+                        <option value="Meyve">Meyve</option>
+                        <option value="Süt Ürünleri">Süt Ürünleri</option>
+                    </select>
+                    <textarea name="description" class="form-control mb-2" placeholder="Ürün açıklaması" required></textarea>
+                    <input type="file" name="image" class="form-control mb-2" accept="image/*" required>
+                    <button type="submit" name="add_product" class="btn btn-success">Ürün Ekle</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Ürünlerim</h4>
+            <div class="card p-3 mb-3">
+                {% for product in products %}
+                    <div class="d-flex justify-content-between mb-2">
+                        <div>
+                            <img src="{{ url_for('static', filename=product[4]) }}" alt="{{ product[1] }}" style="width: 50px; height: 50px;">
+                            <span>{{ product[1] }} - {{ product[2] }} TL/kg (Stok: {{ product[3] }} kg) - {{ product[6] }}</span>
+                        </div>
+                        <form method="POST" style="display:inline;">
+                            <input type="hidden" name="product_id" value="{{ product[0] }}">
+                            <button type="submit" name="delete_product" class="btn btn-sm btn-danger">Sil</button>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+            <h4>Siparişler</h4>
+            <div class="card p-3">
+                {% if orders %}
+                    {% for order in orders %}
+                        <p>{{ order[1] }} - {{ order[2] }} TL ({{ order[3] }} kg) - Alıcı: {{ order[9] }} - Durum: {{ order[7] }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>Henüz sipariş yok.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

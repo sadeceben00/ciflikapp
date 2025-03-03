@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Giriş Yap</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">Kullanıcı Adı</label>
+            <input type="text" name="username" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Şifre</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Giriş Yap</button>
+    </form>
+    <p>Yönetici için: Kullanıcı adı: admin, Şifre: admin</p>
+{% endblock %}

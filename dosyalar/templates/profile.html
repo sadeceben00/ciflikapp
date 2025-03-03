@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Profilim</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">Kullanıcı Adı</label>
+            <input type="text" name="username" class="form-control" value="{{ user[0] }}" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="full_name" class="form-label">Ad Soyad</label>
+            <input type="text" name="full_name" class="form-control" value="{{ user[1] }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Adres</label>
+            <textarea name="address" class="form-control" required>{{ user[2] }}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="balance" class="form-label">Bakiye</label>
+            <input type="text" name="balance" class="form-control" value="{{ user[3] }} TL" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="role" class="form-label">Rol</label>
+            <input type="text" name="role" class="form-control" value="{{ user[4] }}" disabled>
+        </div>
+        <button type="submit" class="btn btn-success">Güncelle</button>
+    </form>
+{% endblock %}
