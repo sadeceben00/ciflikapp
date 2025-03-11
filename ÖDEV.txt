@@ -1,0 +1,96 @@
+20 defa adını yazan algoritmayı tasarlayınız ?
+
+A1 Başla
+
+A2 Değişken Tanımla: i = 1 (Sayaç olarak kullanılacak)
+
+A3 Karar Şekli (Elmas): "i <= 20 mi?"
+
+A4 Evet:
+
+A5 Yazdır: "Adınızı" (örneğin, "Ali")
+
+A6 Arttır: i = i + 1
+
+A7Geri dön ve "i <= 20 mi?" kontrolünü tekrar yap.
+
+A8 Hayır:
+
+A9 Dur
+
+
+1-1000 kadar tek sayıları yazdıran ve akış diyagramını tasarlayınız ?
+
+A1 Başla
+
+A2 Değişken Tanımla: num = 1 (Tek sayılar için başlangıç)
+
+A3 Karar Şekli (Elmas): "num <= 999 mu?"
+
+A4 Evet:
+
+A5 Yazdır: num
+
+A6 Arttır: num = num + 2
+
+A7 Geri dön ve "num <= 999 mu?" kontrolünü tekrar yap.
+
+A8 Hayır:
+
+A9 Dur
+
+1-50 arasında bulunan 5 katı olan sayıları ekrana yazan akış diyagramını tasarlayınız ?
+
+A1 Başla
+
+A2 Değişken Tanımla: num = 5 (5'in ilk katı)
+
+A3 Karar Şekli (Elmas): "num <= 50 mi?"
+
+A4 Evet:
+
+A5 Yazdır: num
+
+A6 Arttır: num = num + 5
+
+A7 Geri dön ve "num <= 50 mi?" kontrolünü tekrar yap.
+
+A8 Hayır:
+
+A9 Dur
+
+klavyeden girilen fiyatı ve kdv sini ekleyerek ekrana yazdıran algoritmayı tasarlayınız ?
+
+A1 Başla
+
+A2 Giriş: "Fiyatı Giriniz"
+
+A3 Giriş: "KDV Oranını Giriniz"
+
+A4 Hesapla: KDV_miktari = (fiyat * KDV_orani) / 100
+
+A5 Hesapla: toplam_fiyat = fiyat + KDV_miktari
+
+A6 Yazdır: toplam_fiyat
+
+A7 Dur
+
+1-100 arasındaki 3 ile 5 tam bölünebilen sayıları ekrana yazdırınız ve bunun algoritmasını ve akış diyagramını tasarlayınız ?
+
+A1 Başla
+
+A2 Değişken Tanımla: num = 15 (İlk ortak kat)
+
+A3 Karar Şekli (Elmas): "num <= 100 mü?"
+
+A4 Evet:
+
+A5 Yazdır: num
+
+A6 Arttır: num = num + 15
+
+A7 Geri dön ve "num <= 100 mü?" kontrolünü tekrar yap.
+
+A8 Hayır:
+
+A9 Dur
